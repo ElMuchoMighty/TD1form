@@ -47,7 +47,7 @@ public class Soliste {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public double getNum() {
+	public long getNum() {
 		return num;
 	}
 	public void setNum(long num) {
