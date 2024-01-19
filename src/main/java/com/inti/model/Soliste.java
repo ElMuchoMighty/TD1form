@@ -34,8 +34,8 @@ public class Soliste {
 	private String nationalite;
 	
 	@ManyToMany
-	@JoinTable( name = "Asso_Oeuvre_Soliste", joinColumns = @JoinColumn(name = "id"),
-	inverseJoinColumns = @JoinColumn( name = "num"))
+	@JoinTable( name = "Asso_Oeuvre_Soliste", joinColumns = @JoinColumn(name = "num_soliste"),
+	inverseJoinColumns = @JoinColumn( name = "num_oeuvre"))
 	private List<Oeuvre> oeuvres = new ArrayList<>();
 
 }

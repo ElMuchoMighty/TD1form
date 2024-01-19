@@ -23,7 +23,7 @@ import lombok.Data;
 public class ChefOrchestre {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int num;
+	private long num;
 	private String nom;
 	private String prenom;
 	private Date dateDeNaissance;
