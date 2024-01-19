@@ -7,11 +7,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "oeuvre")
 public class Oeuvre {
+	public Concert getConcert() {
+		return concert;
+	}
+
+	public void setConcert(Concert concert) {
+		this.concert = concert;
+	}
+
 	@Id
 	@GeneratedValue
 	private long num;
@@ -21,6 +31,9 @@ public class Oeuvre {
 	@ManyToMany(mappedBy = "oeuvres")
 	private List<Soliste> soliste = new ArrayList<>();
 
+	@ManyToOne
+	private Concert concert;
+	
 	public long getNum() {
 		return num;
 	}
@@ -68,6 +81,8 @@ public class Oeuvre {
 		this.soliste = soliste;
 	}
 	
+	@OneToMany(mappedBy = "oeuvre")
+	private List<ChefOrchestre> chefOrchestre;
 	
 
 }

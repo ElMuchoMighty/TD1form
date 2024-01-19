@@ -20,8 +20,7 @@ public class OeuvreController {
 	public String saveOeuvre(@ModelAttribute("oeuvre") Oeuvre oeuvre)
 	{
 		ios.save(oeuvre);
-		return "formulaireSoliste";
-		
+		return "formulaireSoliste";	
 	}
 	
 	@PostMapping("deleteOeuvre")
@@ -40,7 +39,7 @@ public class OeuvreController {
 	public String updateOeuvre(@ModelAttribute("oeuvre") Oeuvre oeuvre)
 	{
 		ios.update(oeuvre);
-		return "formulaireSolaire";
+		return "formulaireSoliste";
 	}
 	
 }

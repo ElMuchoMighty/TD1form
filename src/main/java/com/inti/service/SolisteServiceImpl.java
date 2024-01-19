@@ -27,11 +27,6 @@ public class SolisteServiceImpl implements ISolisteService{
 		return isr.findAll();
 	}
 
-	@Override
-	public void delete(Long id) {
-		isr.deleteById(id);
-		
-	}
 
 	@Override
 	public boolean update(Soliste soliste) {
@@ -52,6 +47,11 @@ public class SolisteServiceImpl implements ISolisteService{
 	@Override
 	public Optional<Soliste> getSoliste(long id) {
 		return isr.findById(id);
+	}
+
+	@Override
+	public void delete(Long id) {
+		isr.deleteById(id);
 	}
 
 }

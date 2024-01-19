@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,8 +26,6 @@ import lombok.Data;
 public class Soliste {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column(name = "num", length = 50)
 	private long num;
 	private String nom;
 	private String prenom;
@@ -36,10 +33,9 @@ public class Soliste {
 	private String nationalite;
 	
 	@ManyToMany
-	@JoinTable( name = "Asso_Oeuvre_Soliste", joinColumns = @JoinColumn(name = "id"),
-	inverseJoinColumns = @JoinColumn( name = "num"))
+	@JoinTable( name = "Asso_Oeuvre_Soliste", joinColumns = @JoinColumn(name = "num_soliste"),
+	inverseJoinColumns = @JoinColumn( name = "num_oeuvre"))
 	private List<Oeuvre> oeuvres = new ArrayList<>();
-	
 	
 	public int getId() {
 		return id;
@@ -112,5 +108,5 @@ public class Soliste {
 	public Soliste() {
 		super();
 	}
-	
+
 }
