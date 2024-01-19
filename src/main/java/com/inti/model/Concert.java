@@ -25,5 +25,8 @@ public class Concert {
 
 	@OneToMany(mappedBy = "concert")
 	private List<Oeuvre> oeuvres;
+	
+	@OneToMany(mappedBy = "concert")
+	private List<Lieu> lieux;
 
 }
