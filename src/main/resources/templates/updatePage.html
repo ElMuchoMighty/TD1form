@@ -10,7 +10,7 @@
 	<div>
 		<form method="post" action=saveSoliste modelattribute="soliste">
 
-		  <input type="number" class="form-control" id="inputId" name="id" th:value="${sol.id}" hidden="true">
+		  <input type="number" class="form-control" id="inputId" name="num" th:value="${sol.num}" hidden="true">
 
 		  <div class="mb-3">
 		    <label for="inputNom" class="form-label" >Nom</label>
@@ -19,10 +19,6 @@
 		  <div class="mb-3">
 		    <label for="inputPrenom" class="form-label">Prenom</label>
 		    <input type="text" class="form-control" id="inputPrenom" name="prenom" th:value="${sol.prenom}">
-		  </div>
-		  		  <div class="mb-3">
-		    <label for="inputNum" class="form-label">Num</label>
-		    <input type="number" class="form-control" id="inputNum" name="num" th:value="${sol.num}">
 		  </div>
 		  <div class="mb-3">
 		    <label for="inputDate" class="form-label">Date de naissance</label>

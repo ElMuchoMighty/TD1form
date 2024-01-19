@@ -37,12 +37,7 @@ public class Soliste {
 	inverseJoinColumns = @JoinColumn( name = "num_oeuvre"))
 	private List<Oeuvre> oeuvres = new ArrayList<>();
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public long getNum() {
 		return num;
 	}
@@ -83,7 +78,6 @@ public class Soliste {
 	}
 	public Soliste(int id, long num, String nom, String prenom, Date dateNaissance, String nationalite) {
 		super();
-		this.id = id;
 		this.num = num;
 		this.nom = nom;
 		this.prenom = prenom;

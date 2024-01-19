@@ -25,17 +25,17 @@
   </thead>
   <tbody>
     <tr th:each="soliste : ${listeSol}">
-      <th scope="row" th:text="${soliste.id}"></th>
+      <th scope="row" th:text="${soliste.num}"></th>
       <td th:text="${soliste.nom}"></td>
       <td th:text="${soliste.prenom}"></td>
       <td th:text="${soliste.dateNaissance}"></td>
       <td th:text="${soliste.num}"></td>
       <td th:text="${soliste.nationalite}"></td>
             <td>
-	<a type="button" class="btn btn-secondary" th:href="@{'/voirOeuvres/' + ${soliste.id}}" >Voir les oeuvres</a></td>
+	<a type="button" class="btn btn-secondary" th:href="@{'/voirOeuvres/' + ${soliste.num}}" >Voir les oeuvres</a></td>
       <td>
-	<a type="button" class="btn btn-secondary" th:href="@{'/soliste/updateSoliste/' + ${soliste.id}}" >Update Soliste</a>
-	<a type="button" class="btn btn-danger" th:href="@{'/soliste/deleteSoliste/' + ${soliste.id}}" >Delete Soliste</a></td>
+	<a type="button" class="btn btn-secondary" th:href="@{'/soliste/updateSoliste/' + ${soliste.num}}" >Update Soliste</a>
+	<a type="button" class="btn btn-danger" th:href="@{'/soliste/deleteSoliste/' + ${soliste.num}}" >Delete Soliste</a></td>
     </tr>
   </tbody>
 </table>
