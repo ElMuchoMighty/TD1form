@@ -36,5 +36,77 @@ public class Soliste {
 	@JoinTable( name = "Asso_Oeuvre_Soliste", joinColumns = @JoinColumn(name = "num_soliste"),
 	inverseJoinColumns = @JoinColumn( name = "num_oeuvre"))
 	private List<Oeuvre> oeuvres = new ArrayList<>();
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public long getNum() {
+		return num;
+	}
+	public void setNum(long num) {
+		this.num = num;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getPrenom() {
+		return prenom;
+	}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+	public String getNationalite() {
+		return nationalite;
+	}
+	public void setNationalite(String nationalite) {
+		this.nationalite = nationalite;
+	}
+	public Soliste(long num, String nom, String prenom, Date dateNaissance, String nationalite) {
+		super();
+		this.num = num;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.nationalite = nationalite;
+	}
+	public Soliste(int id, long num, String nom, String prenom, Date dateNaissance, String nationalite) {
+		super();
+		this.id = id;
+		this.num = num;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.nationalite = nationalite;
+	}
+	public List<Oeuvre> getOeuvres() {
+		return oeuvres;
+	}
+	public void setOeuvres(List<Oeuvre> oeuvres) {
+		this.oeuvres = oeuvres;
+	}
+	public Soliste(long num, String nom, String prenom, Date dateNaissance, String nationalite, List<Oeuvre> oeuvres) {
+		super();
+		this.num = num;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.nationalite = nationalite;
+		this.oeuvres = oeuvres;
+	}
+	public Soliste() {
+		super();
+	}
 
 }

@@ -45,12 +45,21 @@ public class SolisteController {
 		return "redirect:/soliste/getAllSoliste";
 	}
 	
-	@PostMapping("updateSoliste")
-	public String updateSoliste(@ModelAttribute("soliste") Soliste soliste)
-	{
-		iss.update(soliste);
-		return "formulaireSoliste";
+	@GetMapping("/updateSoliste/{id}")
+	public String getUpdateSoliste(@PathVariable Long id, Model m) {
+		m.addAttribute("sol", iss.getSoliste(id).get());
+		return "updatePage";
 	}
+	
+	
+	@PostMapping("/updateSoliste/saveSoliste")
+	public String updateSoliste(@ModelAttribute("soliste") Soliste s) {
+		System.out.println(s);
+		iss.save(s);
+		return "redirect:/soliste/getAllSoliste";
+	}
+	
+	
 	@PostMapping("findByNom")
 	public String findByNom(@ModelAttribute("nom") String nom, Model m)
 	{

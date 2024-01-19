@@ -1,6 +1,7 @@
 package com.inti.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,11 @@ public class SolisteServiceImpl implements ISolisteService{
 	@Override
 	public long getSolisteCount() {
 		return isr.count();
+	}
+	
+	@Override
+	public Optional<Soliste> getSoliste(long id) {
+		return isr.findById(id);
 	}
 
 	@Override
