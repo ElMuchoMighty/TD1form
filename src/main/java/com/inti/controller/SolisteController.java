@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,25 +20,31 @@ public class SolisteController {
 	@Autowired
 	ISolisteService iss;
 	
+	@GetMapping("getAllSoliste")
+	public String getAllSoliste(Model m)
+	{
+		m.addAttribute("total", iss.getAllSoliste().size());
+		m.addAttribute("listeSol", iss.getAllSoliste());
+		return "viewAll";
+	}
+	
+	@GetMapping("addSoliste")
+	public String getFormAddSoliste() {
+		return "newSoliste";
+	}
+	
 	@PostMapping("saveSoliste")
 	public String saveSoliste(@ModelAttribute("soliste") Soliste soliste)
 	{
 		iss.save(soliste);
-		return "formulaireSoliste";
+		return "redirect:/soliste/getAllSoliste";
 	}
 	
-	@PostMapping("getAllSoliste")
-	public String getAllSoliste(Model m)
-	{
-		m.addAttribute("allSoloist", iss.getAllSoliste());
-		return "formulaireSoliste";
-	}
 	
-	@PostMapping("deleteSoliste")
-	public String deleteSoliste(@ModelAttribute("soliste") Soliste soliste)
-	{
-		iss.delete(soliste.getId());
-		return "formulaireSoliste";
+	@GetMapping("deleteSoliste/{id}")
+	public String deleteSoliste(@PathVariable Long id) {
+		iss.delete(id);
+		return "redirect:/soliste/getAllSoliste";
 	}
 	
 	@PostMapping("updateSoliste")

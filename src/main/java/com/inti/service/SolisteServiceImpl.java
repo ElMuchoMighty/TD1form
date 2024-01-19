@@ -27,8 +27,8 @@ public class SolisteServiceImpl implements ISolisteService{
 	}
 
 	@Override
-	public void delete(int id) {
-		isr.deleteById((long) id);
+	public void delete(Long id) {
+		isr.deleteById(id);
 		
 	}
 

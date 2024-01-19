@@ -109,5 +109,8 @@ public class Soliste {
 		this.nationalite = nationalite;
 		this.oeuvres = oeuvres;
 	}
+	public Soliste() {
+		super();
+	}
 	
 }
