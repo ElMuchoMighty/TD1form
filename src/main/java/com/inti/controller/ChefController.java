@@ -22,7 +22,7 @@ public class ChefController {
 	public String saveChef(@ModelAttribute("chef") ChefOrchestre chef)
 	{
 		icos.save(chef);
-		return "formConcert";
+		return "formChef";
 		
 	}
 	
@@ -30,14 +30,14 @@ public class ChefController {
 	public String delete(@ModelAttribute("chef") ChefOrchestre chef)
 	{
 		icos.delete(chef.getNum());
-		return "formConcert";
+		return "formChef";
 	}
 	
 	@GetMapping("getAllChef")
 	public String getAllChef(Model m)
 	{
 		m.addAttribute("allChef", icos.getAllChefOrchestre());
-		return "formConcert";
+		return "formChef";
 		
 	}
 	
@@ -45,7 +45,7 @@ public class ChefController {
 	public String updateChef(@ModelAttribute("chef") ChefOrchestre chef)
 	{
 		icos.update(chef);
-		return "formConcert";
+		return "formChef";
 	}
 	
 	
