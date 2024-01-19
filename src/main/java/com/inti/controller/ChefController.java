@@ -23,7 +23,6 @@ public class ChefController {
 	{
 		icos.save(chef);
 		return "formChef";
-		
 	}
 	
 	@DeleteMapping("deletechef")
@@ -38,7 +37,6 @@ public class ChefController {
 	{
 		m.addAttribute("allChef", icos.getAllChefOrchestre());
 		return "formChef";
-		
 	}
 	
 	@PostMapping("updateChef")
@@ -47,7 +45,4 @@ public class ChefController {
 		icos.update(chef);
 		return "formChef";
 	}
-	
-	
-
 }

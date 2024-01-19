@@ -9,6 +9,5 @@ import com.inti.model.Soliste;
 
 @Repository
 public interface ISolisteRepository extends JpaRepository<Soliste, Long>{
-
 	List<Soliste> findByNom(String nom);
 }
