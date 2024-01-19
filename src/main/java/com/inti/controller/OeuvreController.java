@@ -40,7 +40,7 @@ public class OeuvreController {
 	public String updateOeuvre(@ModelAttribute("oeuvre") Oeuvre oeuvre)
 	{
 		ios.update(oeuvre);
-		return "formulaireSolaire";
+		return "formulaireSoliste";
 	}
 	
 }

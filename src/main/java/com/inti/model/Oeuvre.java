@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -80,6 +81,8 @@ public class Oeuvre {
 		this.soliste = soliste;
 	}
 	
+	@OneToMany(mappedBy = "oeuvre")
+	private List<ChefOrchestre> chefOrchestre;
 	
 
 }
