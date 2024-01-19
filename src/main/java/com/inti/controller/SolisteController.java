@@ -54,7 +54,7 @@ public class SolisteController {
 	@PostMapping("count")
 	public String countSoliste(Model m)
 	{
-		m.addAttribute("numberSoliste", iss.countSoliste());
+		m.addAttribute("numberSoliste", iss.getSolisteCount());
 		return "formulaireSoliste";
 	}
 }

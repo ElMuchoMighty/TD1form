@@ -44,7 +44,7 @@ public class SolisteServiceImpl implements ISolisteService{
 	}
 
 	@Override
-	public long countSoliste() {
+	public long getSolisteCount() {
 		return isr.count();
 	}
 

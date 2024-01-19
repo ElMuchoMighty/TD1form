@@ -1,13 +1,19 @@
 package com.inti.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 /**
  * 
@@ -17,6 +23,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "soliste")
+@Data
 public class Soliste {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +34,13 @@ public class Soliste {
 	private String prenom;
 	private Date dateNaissance;
 	private String nationalite;
+	
+	@ManyToMany
+	@JoinTable( name = "Asso_Oeuvre_Soliste", joinColumns = @JoinColumn(name = "id"),
+	inverseJoinColumns = @JoinColumn( name = "num"))
+	private List<Oeuvre> oeuvres = new ArrayList<>();
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -80,4 +94,20 @@ public class Soliste {
 		this.dateNaissance = dateNaissance;
 		this.nationalite = nationalite;
 	}
+	public List<Oeuvre> getOeuvres() {
+		return oeuvres;
+	}
+	public void setOeuvres(List<Oeuvre> oeuvres) {
+		this.oeuvres = oeuvres;
+	}
+	public Soliste(long num, String nom, String prenom, Date dateNaissance, String nationalite, List<Oeuvre> oeuvres) {
+		super();
+		this.num = num;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.nationalite = nationalite;
+		this.oeuvres = oeuvres;
+	}
+	
 }

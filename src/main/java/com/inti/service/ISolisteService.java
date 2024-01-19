@@ -13,5 +13,5 @@ public interface ISolisteService {
 	public void delete(int id);
 	public boolean update(Soliste soliste);
 	public List<Soliste> findByNom(String nom);
-	public long countSoliste();
+	public long getSolisteCount();
 }
